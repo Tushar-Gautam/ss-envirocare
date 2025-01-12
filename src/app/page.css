@@ -1,0 +1,20 @@
+.animation-particle {
+  height: 75vh;
+  width: 100%;
+  margin: 0 20px;
+  overflow: hidden;
+}
+.test {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+}
+figure {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 60%;
+  height: auto;
+}

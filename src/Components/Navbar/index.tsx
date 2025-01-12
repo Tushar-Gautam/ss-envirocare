@@ -8,8 +8,9 @@ const Navbar = () => {
         <Image
           src="/logoDark.jpeg"
           alt="ss-envirocare logo"
-          width={100}
+          width={130}
           height={100}
+          priority
         />
       </figure>
       <ul>

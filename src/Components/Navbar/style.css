@@ -3,13 +3,18 @@
   grid-template-columns: 2fr 8fr 2fr;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--nav-bg);
-  color: var(--nav-text-muted);
+  color: var(--nav-text);
   height: 60px;
   border-radius: 20px;
   padding: 0 24px;
   width: 60%;
   margin: 28px auto;
+  background: rgba(51, 120, 64, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(51, 120, 64, 0.3);
 
   ul {
     display: flex;
@@ -21,7 +26,6 @@
       position: relative;
       z-index: 2;
       &:hover {
-        color: var(--nav-text);
         transform: translateY(-3px);
         transition: all 0.4s ease;
       }
@@ -64,7 +68,7 @@
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #2d2a28;
+  background: #0aa97a;
   border-radius: 10px;
 }
 

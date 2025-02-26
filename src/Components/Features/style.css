@@ -60,7 +60,7 @@
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, #14b8a6 50%, #c084fc 50%, #ec4899);
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 /* Feature Groups */
@@ -97,14 +97,21 @@
 
 .connection-line.highlight {
   background-color: #14b8a6;
+  transition: transform 0.3s;
+}
+.connection-line.highlight.left-line {
+  transform: translateX(50%);
+}
+.connection-line.highlight.right-line {
+  transform: translateX(-50%);
 }
 
 .left-line {
-  left: 50%;
+  right: 50%;
 }
 
 .right-line {
-  right: 50%;
+  left: 50%;
 }
 
 /* Feature Card */

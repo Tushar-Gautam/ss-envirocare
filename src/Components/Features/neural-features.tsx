@@ -1,11 +1,11 @@
 "use client";
 import {
   Recycle,
-  Shield,
-  TreePine,
-  Building2,
   Truck,
-  BadgeCheck,
+  Package,
+  HardDrive,
+  Database,
+  Globe,
 } from "lucide-react";
 import { useState } from "react";
 import "./style.css";
@@ -15,45 +15,45 @@ export default function NeuralFeatures() {
 
   const features = [
     {
-      icon: <Recycle className="icon" />,
-      title: "Responsible Recycling",
-      description:
-        "Professional e-waste disposal with zero landfill impact, ensuring every component is properly recycled or repurposed.",
-    },
-    {
-      icon: <Shield className="icon" />,
-      title: "Secure Data Destruction",
-      description:
-        "Military-grade data wiping and physical destruction services to protect your sensitive information.",
-    },
-    {
-      icon: <TreePine className="icon" />,
-      title: "Environmental Impact",
-      description:
-        "Every device recycled with us saves 20kg of CO2 emissions. Track your environmental contribution in real-time.",
-    },
-    {
-      icon: <Building2 className="icon" />,
-      title: "Corporate Solutions",
-      description:
-        "Tailored programs for businesses with regular e-waste disposal needs, including compliance reporting.",
-    },
-    {
       icon: <Truck className="icon" />,
-      title: "Free Collection",
+      title: "Collection and Reverse Logistics Management",
       description:
-        "Convenient pickup service for businesses and residential areas. Schedule online in minutes.",
+        "Efficiently gather e-waste from various sources and transport it to recycling facilities using eco-friendly logistics.",
     },
     {
-      icon: <BadgeCheck className="icon" />,
-      title: "Certified Process",
+      icon: <Recycle className="icon" />,
+      title: "E-Waste Recycling",
       description:
-        "ISO certified recycling process ensuring compliance with international environmental standards.",
+        "Process and repurpose discarded electronic devices to minimize environmental impact and conserve resources.",
+    },
+    {
+      icon: <Package className="icon" />,
+      title: "Precious Metal Recovery",
+      description:
+        "Extract valuable metals like gold, silver, and copper from e-waste, reducing the need for new mining.",
+    },
+    {
+      icon: <HardDrive className="icon" />,
+      title: "IT Asset Disposal",
+      description:
+        "Securely dispose of obsolete or unused IT equipment, ensuring data security and environmental compliance.",
+    },
+    {
+      icon: <Database className="icon" />,
+      title: "Data Destruction",
+      description:
+        "Permanently and securely eliminate sensitive data from electronic devices to protect privacy and prevent data breaches.",
+    },
+    {
+      icon: <Globe className="icon" />,
+      title: "EPR Fulfilment",
+      description:
+        "Ensure compliance with Extended Producer Responsibility regulations, managing the end-of-life disposal of electronic products.",
     },
   ];
 
   return (
-    <section className="neural-section">
+    <section className="neural-section flex flex-col items-center justify-center">
       <div className="container">
         <div className="header">
           <h2 className="title">Integrated E-Cycling Ecosystem</h2>

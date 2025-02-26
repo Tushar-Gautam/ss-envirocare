@@ -2,6 +2,7 @@ import SequentialTextAnimation from "@/Components/Sequential";
 import "./page.css";
 import ParticleAnimation from "@/Components/Particle";
 import Image from "next/image";
+import NeuralFeatures from "@/Components/Features/neural-features";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           pauseTime={1000}
         />
       </div>
+      <NeuralFeatures />
     </>
   );
 }

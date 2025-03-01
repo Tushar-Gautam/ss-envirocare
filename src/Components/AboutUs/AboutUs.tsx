@@ -20,9 +20,11 @@ export default function AboutSection() {
           <div className="image-container">
             <div className="image-container__glass" />
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="/recycle.avif"
               alt="E-waste recycling facility"
               className="image-container__img"
+              width="100"
+              height="100"
             />
           </div>
           <div className="content-block animate-fade-up animate-delay-1">
@@ -54,9 +56,11 @@ export default function AboutSection() {
           <div className="image-container order-1">
             <div className="image-container__glass" />
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="/napkin.png"
               alt="Community engagement program"
               className="image-container__img"
+              width="100"
+              height="100"
             />
           </div>
         </div>

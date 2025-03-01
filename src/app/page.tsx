@@ -30,8 +30,8 @@ export default function Home() {
           pauseTime={1000}
         />
       </div>
-      <NeuralFeatures />
       <AboutUs />
+      <NeuralFeatures />
       <ContactSection />
     </>
   );

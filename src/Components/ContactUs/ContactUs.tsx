@@ -105,8 +105,8 @@ export default function ContactSection() {
           <div className="map-container__glass" />
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14232.989586360334!2d75.7256215395508!3d26.895642500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5f1b4c6f263%3A0xb8174c5e55aea7fa!2sKaushik%20House%20-%20Luxury%20Homestay!5e0!3m2!1sen!2sin!4v1740849162541!5m2!1sen!2sin"
-            width="600"
-            height="450"
+            width="100%"
+            height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

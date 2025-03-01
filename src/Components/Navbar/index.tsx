@@ -16,12 +16,25 @@ type SectionId = (typeof sections)[number];
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [isSticky, setIsSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Handle scroll event to update active section
+  // Handle scroll event to update active section and check if navbar should be sticky
   useEffect(() => {
+    const navbar = document.getElementById("navbar");
+    const navbarOffsetTop = navbar ? navbar.offsetTop : 0;
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
 
+      // Check if navbar should be sticky
+      if (window.scrollY > navbarOffsetTop) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+
+      // Update active section
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -40,6 +53,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu when clicking a navigation item on mobile
+  const handleNavClick = (sectionId: SectionId) => {
+    scrollToSection(sectionId);
+    setMenuOpen(false);
+  };
+
   // Scroll to section function
   const scrollToSection = (sectionId: SectionId) => {
     const section = document.getElementById(sectionId);
@@ -52,48 +71,70 @@ const Navbar = () => {
     }
   };
 
+  // Toggle mobile menu
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <nav className="navbar">
-      <ul>
-        <li
-          className={activeSection === "home" ? "active" : ""}
-          onClick={() => scrollToSection("home")}
-        >
-          Home
-        </li>
-        <li
-          className={activeSection === "about" ? "active" : ""}
-          onClick={() => scrollToSection("about")}
-        >
-          About
-        </li>
-        <li
-          className={activeSection === "mission" ? "active" : ""}
-          onClick={() => scrollToSection("mission")}
-        >
-          Mission & Vision
-        </li>
-        <li
-          className={activeSection === "services" ? "active" : ""}
-          onClick={() => scrollToSection("services")}
-        >
-          Services
-        </li>
-        <li
-          className={activeSection === "products" ? "active" : ""}
-          onClick={() => scrollToSection("products")}
-        >
-          Products
-        </li>
-      </ul>
-      <button
-        className="button-style"
-        role="button"
-        onClick={() => scrollToSection("contact")}
+    <>
+      <nav
+        id="navbar"
+        className={`navbar ${isSticky ? "sticky" : ""} ${
+          menuOpen ? "menu-open" : ""
+        }`}
       >
-        Contact us
-      </button>
-    </nav>
+        {/* Mobile menu toggle button */}
+        <div className="mobile-menu-toggle" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul className={menuOpen ? "open" : ""}>
+          <li
+            className={activeSection === "home" ? "active" : ""}
+            onClick={() => handleNavClick("home")}
+          >
+            Home
+          </li>
+          <li
+            className={activeSection === "about" ? "active" : ""}
+            onClick={() => handleNavClick("about")}
+          >
+            About
+          </li>
+          <li
+            className={activeSection === "mission" ? "active" : ""}
+            onClick={() => handleNavClick("mission")}
+          >
+            Mission & Vision
+          </li>
+          <li
+            className={activeSection === "services" ? "active" : ""}
+            onClick={() => handleNavClick("services")}
+          >
+            Services
+          </li>
+          <li
+            className={activeSection === "products" ? "active" : ""}
+            onClick={() => handleNavClick("products")}
+          >
+            Products
+          </li>
+        </ul>
+        <button
+          className="button-style"
+          role="button"
+          onClick={() => handleNavClick("contact")}
+        >
+          Contact us
+        </button>
+      </nav>
+
+      {/* Add a spacer element when navbar is sticky to prevent content jump */}
+      {isSticky && <div className="navbar-spacer"></div>}
+    </>
   );
 };
 

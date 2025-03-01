@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./style.css";
 
 export default function AboutSection() {
@@ -18,7 +19,7 @@ export default function AboutSection() {
         <div className="about-section__grid">
           <div className="image-container">
             <div className="image-container__glass" />
-            <img
+            <Image
               src="/placeholder.svg?height=400&width=600"
               alt="E-waste recycling facility"
               className="image-container__img"
@@ -26,13 +27,13 @@ export default function AboutSection() {
           </div>
           <div className="content-block animate-fade-up animate-delay-1">
             <p>
-              Since our inception in 2015, we've been at the forefront of the
-              e-waste recycling revolution. Our state-of-the-art facility
+              Since our inception in 2015, we&apos;ve been at the forefront of
+              the e-waste recycling revolution. Our state-of-the-art facility
               processes over 10,000 tons of electronic waste annually,
               implementing cutting-edge techniques that ensure maximum resource
-              recovery while maintaining zero landfill impact. We've pioneered
-              innovative recycling methods that have set new industry standards
-              for environmental responsibility.
+              recovery while maintaining zero landfill impact. We&apos;ve
+              pioneered innovative recycling methods that have set new industry
+              standards for environmental responsibility.
             </p>
           </div>
         </div>
@@ -40,19 +41,19 @@ export default function AboutSection() {
         <div className="about-section__grid">
           <div className="content-block animate-fade-up animate-delay-1 order-2">
             <p>
-              Our commitment extends beyond recycling – we're building a
+              Our commitment extends beyond recycling – we&apos;re building a
               sustainable future through education and community engagement.
               Working with local schools, businesses, and government
-              organizations, we've created awareness programs that have reached
-              over 100,000 individuals. Our initiatives have helped reduce
-              e-waste in landfills by 75% in our operating regions, while our
-              innovative data destruction services have protected countless
+              organizations, we&apos;ve created awareness programs that have
+              reached over 100,000 individuals. Our initiatives have helped
+              reduce e-waste in landfills by 75% in our operating regions, while
+              our innovative data destruction services have protected countless
               organizations from potential security breaches.
             </p>
           </div>
           <div className="image-container order-1">
             <div className="image-container__glass" />
-            <img
+            <Image
               src="/placeholder.svg?height=400&width=600"
               alt="Community engagement program"
               className="image-container__img"

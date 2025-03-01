@@ -13,8 +13,8 @@ export default function ContactSection() {
         <header className="about-section__header">
           <h2 className="about-section__title animate-fade-up">Get in Touch</h2>
           <p className="content-block">
-            Have questions about our e-waste recycling services? We're here to
-            help.
+            Have questions about our e-waste recycling services? We&apos;re here
+            to help.
           </p>
         </header>
 

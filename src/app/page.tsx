@@ -3,6 +3,7 @@ import "./page.css";
 import ParticleAnimation from "@/Components/Particle";
 import Image from "next/image";
 import NeuralFeatures from "@/Components/Features/neural-features";
+import AboutUs from "@/Components/AboutUs/AboutUs";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         />
       </div>
       <NeuralFeatures />
+      <AboutUs />
     </>
   );
 }

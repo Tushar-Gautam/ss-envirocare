@@ -5,6 +5,8 @@ import Image from "next/image";
 import NeuralFeatures from "@/Components/Features/neural-features";
 import AboutUs from "@/Components/AboutUs/AboutUs";
 import ContactSection from "@/Components/ContactUs/ContactUs";
+import MissionVision from "@/Components/Mission/Mission";
+import HeroSection from "@/Components/Hero/Hero";
 
 export default function Home() {
   return (
@@ -22,29 +24,28 @@ export default function Home() {
         </figure>
         <div className="animation-particle">
           <ParticleAnimation />
-        </div>
-
-        <div className="test">
-          <SequentialTextAnimation
-            typingSpeed={150}
-            erasingSpeed={100}
-            pauseTime={1000}
-          />
+          <div>
+            <div className="test">
+              <SequentialTextAnimation
+                typingSpeed={150}
+                erasingSpeed={100}
+                pauseTime={1000}
+              />
+            </div>
+            <HeroSection />
+          </div>
         </div>
       </section>
-
       <section id="about">
         <AboutUs />
       </section>
       <section id="mission">
-        <h2>Our Mission & Vision</h2>
+        <MissionVision />
       </section>
       <section id="services">
         <NeuralFeatures />
       </section>
-      <section id="products">
-        <h2>Our Products</h2>
-      </section>
+      <section id="products">{/* <h2>Our Products</h2> */}</section>
       <section id="contact">
         <ContactSection />
       </section>

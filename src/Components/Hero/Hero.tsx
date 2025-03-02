@@ -58,7 +58,9 @@ export default function HeroSection() {
       </div>
 
       <div className="hero__content">
-        <h1 className="hero__title">Leading India's E-Waste Revolution</h1>
+        <h1 className="hero__title">
+          Leading India`&apos;s E-Waste Revolution
+        </h1>
 
         {/* Quotes Carousel */}
         <div className="quotes-carousel">

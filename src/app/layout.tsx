@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <link rel="icon" href="/logoIconLight.jpeg" sizes="any" />
       <body>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

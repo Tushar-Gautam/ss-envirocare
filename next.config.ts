@@ -1,11 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: "export",
-  basePath: "/ss-envirocare",
-  assetPrefix: "/ss-envirocare",
-  images: {
-    unoptimized: true,
-  },
-};
+const isGithubPages = process.env.GITHUB_PAGES === "true";
 
-module.exports = nextConfig;
+module.exports = {
+  output: "export",
+  basePath: isGithubPages ? "/ss-envirocare" : "",
+  assetPrefix: isGithubPages ? "/ss-envirocare" : "",
+};

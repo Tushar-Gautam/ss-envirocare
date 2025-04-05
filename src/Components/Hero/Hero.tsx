@@ -1,13 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import {
-  ReduceIcon,
-  ReuseIcon,
-  RecycleIcon,
-  CircularEconomyIcon,
-  GreenEnergyIcon,
-} from "./icons";
-import Image from "next/image";
+import ParticleAnimation from "@/Components/Particle";
 import "./style.css";
 
 const quotes = [
@@ -35,86 +28,43 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveQuote((prev) => (prev + 1) % quotes.length);
-    }, 1000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [activeQuote]);
 
-  const icons = [
-    { Icon: "/SwacchBharat.svg", label: "Swachh Bharat" },
-    { Icon: "/makeInIndia.png", label: "Make in India" },
-    { Icon: ReduceIcon, label: "Reduce" },
-    { Icon: ReuseIcon, label: "Reuse" },
-    { Icon: RecycleIcon, label: "Recycle" },
-    { Icon: CircularEconomyIcon, label: "Circular Economy" },
-    { Icon: GreenEnergyIcon, label: "Green Energy" },
-  ];
-
   return (
     <section className="hero">
+      {/* Particle Animation as Background */}
       <div className="hero__bg">
-        <div className="hero__blob hero__blob--1" />
-        <div className="hero__blob hero__blob--2" />
+        <ParticleAnimation />
       </div>
 
+      {/* Hero Content */}
       <div className="hero__content">
         <h1 className="hero__title">Leading India&apos;s E-Waste Revolution</h1>
 
         {/* Quotes Carousel */}
         <div className="quotes-carousel">
           <div className="quotes-track">
-            {quotes.map((quote, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`quote-card ${
-                    index === activeQuote ? "active" : ""
-                  }`}
-                >
-                  <div className="quote-card__glass" />
-                  <div className="quote-card__content">
-                    <p className="quote-text">{quote.text}</p>
-                    <p className="quote-author">- {quote.author}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Icons Carousel */}
-        <div className="icons-carousel">
-          <div className="icons-track">
-            {[...icons, ...icons].map((item, index) => (
-              <div key={index} className="icon-card">
-                <div className="icon-card__glass" />
-                <div className="icon-card__content">
-                  {typeof item.Icon === "string" ? (
-                    <Image
-                      src={item.Icon}
-                      alt={item.label}
-                      width={50}
-                      height={50}
-                      className="icon-svg"
-                    />
-                  ) : (
-                    <item.Icon className="icon-svg" />
-                  )}
+            {quotes.map((quote, index) => (
+              <div
+                key={index}
+                className={`quote-card ${
+                  index === activeQuote ? "active" : ""
+                }`}
+                style={{
+                  transform: `translateX(${100 * (index - activeQuote)}%)`,
+                }}
+              >
+                <div className="quote-card__glass" />
+                <div className="quote-card__content">
+                  <p className="quote-text">{quote.text}</p>
+                  <p className="quote-author">- {quote.author}</p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Make in India Logo */}
-        <div className="make-in-india">
-          <Image
-            src="/make-in-india.svg"
-            alt="Make in India"
-            className="make-in-india__image"
-            width="100"
-            height="100"
-          />
         </div>
       </div>
     </section>

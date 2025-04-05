@@ -1,24 +1,47 @@
-.animation-particle {
-  height: 75vh;
-  width: 100%;
-  margin: 0 20px;
-  overflow: hidden;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center;
 }
+
 .test {
   position: absolute;
-  top: 50%;
+  top: 10%; /* Move the text animation higher */
   left: 50%;
-  transform: translate(-50%, 10%);
+  transform: translateX(-50%); /* Only translate horizontally */
+  z-index: 10; /* Ensure the text is above other content */
 }
+
 figure {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
+
 .logo {
   width: 60%;
   height: auto;
 }
 #home {
-  height: auto;
   width: 100%;
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative; /* For background positioning */
+}
+
+/* Adjust the hero content container if needed */
+.animation-particle {
+  width: 100%;
+  text-align: center; /* Center text content */
+}
+
+/* About Section Styles */
+#about {
+  width: 100%;
+  padding: 5rem 0; /* Add padding for spacing */
+  /* Add margin-top if needed for more separation */
 }

@@ -5,10 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-evenly; */
   position: relative;
   overflow: hidden;
-  padding-top: 4rem; /* Prevent overlap with the About section */
+  padding-top: 4rem;
 }
 
 .hero__bg {
@@ -26,16 +26,16 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   padding: 2rem;
-  z-index: 1; /* Ensure content is above the background */
+  z-index: 1;
 }
 
 .hero__title {
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: bold;
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   background: linear-gradient(
     to right,
     var(--color-primary),
@@ -53,21 +53,25 @@
   max-width: 600px;
   overflow: hidden;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .quotes-track {
   display: flex;
-  transition: transform 0.5s ease;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s ease-in-out;
 }
 
 .quote-card {
-  flex: 0 0 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .quote-card__glass {

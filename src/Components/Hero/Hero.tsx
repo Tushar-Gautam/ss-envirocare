@@ -24,48 +24,59 @@ const quotes = [
 
 export default function HeroSection() {
   const [activeQuote, setActiveQuote] = useState(0);
+  const [direction, setDirection] = useState("next");
+  const [transitioning, setTransitioning] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveQuote((prev) => (prev + 1) % quotes.length);
-    }, 5000);
+    const intervalId = setInterval(() => {
+      setDirection("next");
+      setTransitioning(true);
+      setTimeout(() => {
+        setActiveQuote((prev) => (prev + 1) % quotes.length);
+        setTransitioning(false);
+      }, 1000);
+    }, 6000);
 
-    return () => clearInterval(interval);
-  }, [activeQuote]);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <section className="hero">
-      {/* Particle Animation as Background */}
       <div className="hero__bg">
         <ParticleAnimation />
       </div>
 
-      {/* Hero Content */}
       <div className="hero__content">
-        <h1 className="hero__title">Leading India&apos;s E-Waste Revolution</h1>
-
-        {/* Quotes Carousel */}
         <div className="quotes-carousel">
-          <div className="quotes-track">
-            {quotes.map((quote, index) => (
-              <div
-                key={index}
-                className={`quote-card ${
-                  index === activeQuote ? "active" : ""
-                }`}
-                style={{
-                  transform: `translateX(${100 * (index - activeQuote)}%)`,
-                }}
-              >
-                <div className="quote-card__glass" />
-                <div className="quote-card__content">
-                  <p className="quote-text">{quote.text}</p>
-                  <p className="quote-author">- {quote.author}</p>
-                </div>
+          <div
+            className="quotes-track"
+            style={{
+              transform: transitioning
+                ? direction === "next"
+                  ? "translateX(-100%)"
+                  : "translateX(100%)"
+                : "translateX(0%)",
+              transition: transitioning ? "transform 1s ease-in-out" : "none",
+            }}
+          >
+            <div
+              className="quote-card"
+              key={activeQuote}
+              style={{
+                opacity: transitioning ? 0 : 1,
+                transition: transitioning ? "opacity 0.5s ease-in-out" : "none",
+              }}
+            >
+              <div className="quote-card__glass" />
+              <div className="quote-card__content">
+                <p className="quote-text">{quotes[activeQuote].text}</p>
+                <p className="quote-author">- {quotes[activeQuote].author}</p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
+
+        <h1 className="hero__title">Leading India&apos;s E-Waste Revolution</h1>
       </div>
     </section>
   );

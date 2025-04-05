@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import ParticleAnimation from "@/Components/Particle";
 import "./style.css";
+import Flashcards from "./Flashcard";
 
 const quotes = [
   {
@@ -77,6 +78,7 @@ export default function HeroSection() {
         </div>
 
         <h1 className="hero__title">Leading India&apos;s E-Waste Revolution</h1>
+        <Flashcards />
       </div>
     </section>
   );

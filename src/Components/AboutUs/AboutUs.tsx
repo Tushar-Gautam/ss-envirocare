@@ -27,10 +27,10 @@ export default function AboutSection() {
           <div className="about-section__text-image">
             <div className="about-section__text">
               <p className="animate-fade-up animate-delay-1">
-                Since 2015, we've led the e-waste recycling revolution. Our
+                Since 2015, we&apos;ve led the e-waste recycling revolution. Our
                 facility processes over 10,000 tons annually, using advanced
                 techniques for maximum resource recovery and zero landfill
-                impact. We've pioneered industry-leading recycling methods.
+                impact. We&apos;ve pioneered industry-leading recycling methods.
               </p>
             </div>
             <div className="about-section__image">
@@ -48,7 +48,7 @@ export default function AboutSection() {
           <div className="about-section__text-image reverse">
             <div className="about-section__text">
               <p className="animate-fade-up animate-delay-1">
-                Beyond recycling, we're building a sustainable future via
+                Beyond recycling, we&apos;re building a sustainable future via
                 education and community engagement. Working with schools,
                 businesses, and government, our programs have reached over
                 100,000 people. Our initiatives have reduced landfill e-waste by

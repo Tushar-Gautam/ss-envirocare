@@ -15,11 +15,11 @@ const quotes = [
   },
   {
     text: "Sustainable development hinges on our ability to turn today's waste into tomorrow's wealth.",
-    author: "S S EnviroCare",
+    author: "",
   },
   {
     text: "Reviving the Planet, one device at a time.",
-    author: "S S EnviroCare",
+    author: "",
   },
 ];
 
@@ -71,7 +71,11 @@ export default function HeroSection() {
               <div className="quote-card__glass" />
               <div className="quote-card__content">
                 <p className="quote-text">{quotes[activeQuote].text}</p>
-                <p className="quote-author">- {quotes[activeQuote].author}</p>
+                <p className="quote-author">
+                  {quotes[activeQuote].author
+                    ? `- ${quotes[activeQuote].author}`
+                    : null}{" "}
+                </p>
               </div>
             </div>
           </div>

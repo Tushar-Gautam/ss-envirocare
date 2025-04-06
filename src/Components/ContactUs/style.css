@@ -58,9 +58,10 @@
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: var(--spacing-xl);
 }
 

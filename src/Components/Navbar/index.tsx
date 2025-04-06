@@ -7,7 +7,8 @@ const sections = [
   "about",
   "mission",
   "services",
-  "products",
+  // "products",
+  "impact",
   "contact",
 ] as const;
 
@@ -117,10 +118,10 @@ const Navbar = () => {
             Services
           </li>
           <li
-            className={activeSection === "products" ? "active" : ""}
-            onClick={() => handleNavClick("products")}
+            className={activeSection === "impact" ? "active" : ""}
+            onClick={() => handleNavClick("impact")}
           >
-            Products
+            Impact Calculator
           </li>
         </ul>
         <button

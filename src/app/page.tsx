@@ -5,6 +5,7 @@ import AboutUs from "@/Components/AboutUs/AboutUs";
 import ContactSection from "@/Components/ContactUs/ContactUs";
 import MissionVision from "@/Components/Mission/Mission";
 import HeroSection from "@/Components/Hero/Hero";
+import ImpactCalculator from "@/Components/ImpactCalculator";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
       </section>
       <section id="services">
         <NeuralFeatures />
+      </section>
+      <section id="impact">
+        <ImpactCalculator />
       </section>
       <section id="contact">
         <ContactSection />
